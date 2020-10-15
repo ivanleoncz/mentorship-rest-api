@@ -10,11 +10,11 @@ class MentorSerializer(serializers.HyperlinkedModelSerializer):
 class ProjectSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Project
-        fields = ('name')
+        fields = ('name',)
 
-'''
-class MentorshipSerializer(serializers.HyperlinkedModelSerializer):
+class MentorshipSerializer(serializers.ModelSerializer):
+    mentor = serializers.CharField(source="mentor_id")
+    project = serializers.CharField(source="project_id")
     class Meta:
-        model = Mentor
-        fields = ('name', 'email')
-'''
+        model = Mentorship
+        fields = ('id', 'mentor', 'project', 'status')
