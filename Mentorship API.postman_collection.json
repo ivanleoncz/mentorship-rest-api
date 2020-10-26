@@ -1,0 +1,313 @@
+{
+	"info": {
+		"_postman_id": "0994feda-89ff-4969-9fdc-467d59780ca8",
+		"name": "Mentorship API",
+		"description": "API for maintaining Mentorship definitions, between Mentors and Projects.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Mentors",
+			"item": [
+				{
+					"name": "Create Mentor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"John Doe\",\n    \"email\": \"john.doe@protonmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/mentors/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"mentors",
+								""
+							]
+						},
+						"description": "Create a Mentor"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Mentors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/mentors/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"mentors",
+								""
+							]
+						},
+						"description": "Get all mentors."
+					},
+					"response": []
+				},
+				{
+					"name": "Modify Mentor",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Ivan Leon\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/mentors/1/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"mentors",
+								"1",
+								""
+							]
+						},
+						"description": "Modify Mentor."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Mentor",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/mentors/3/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"mentors",
+								"3",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Projects",
+			"item": [
+				{
+					"name": "Create Project",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"MotoUber\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/projects/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"projects",
+								""
+							]
+						},
+						"description": "Create a Project to be associated with a Mentor."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Projects",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/projects/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"projects",
+								""
+							]
+						},
+						"description": "Get all projects"
+					},
+					"response": []
+				},
+				{
+					"name": "Modify Project",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"StreetFood\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/projects/3/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"projects",
+								"3",
+								""
+							]
+						},
+						"description": "Modify Project"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Project",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/projects/1/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"projects",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Mentorships",
+			"item": [
+				{
+					"name": "Create Mentorhip",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"mentor\": \"Ivan Leon Moresco Jacques\",\n    \"project\": \"MotoUber\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/mentorships/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"mentorships",
+								""
+							]
+						},
+						"description": "Create Mentorship relation, between Projects and Mentors."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Mentorships",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/mentorships/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"mentorships",
+								""
+							]
+						},
+						"description": "Get all Mentorships."
+					},
+					"response": []
+				},
+				{
+					"name": "Update Mentorship",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"mentor\": \"Jaime\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/mentorships/3/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"mentorships",
+								"3",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Mentorship",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/mentorships/3/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"mentorships",
+								"3",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

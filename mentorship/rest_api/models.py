@@ -17,9 +17,9 @@ class Project(models.Model):
 
 class Mentorship(models.Model):
     STATUS_CHOICES = [('active', 'Active'), ('disabled', 'Disabled')]
-    mentor_id = models.ForeignKey(Mentor, on_delete=models.CASCADE)
-    project_id = models.ForeignKey(Project, on_delete=models.CASCADE)
+    mentor = models.ForeignKey(Mentor, on_delete=models.CASCADE)
+    project = models.ForeignKey(Project, on_delete=models.CASCADE)
     status = models.CharField(max_length=12, choices=STATUS_CHOICES,
                                                             default='active')
     def __str__(self):
-        return f"{self.mentor_id} ({self.project_id.name})"
+        return f"{self.mentor} ({self.project.name})"
